@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="LandscapeManagement.Views.NewFolder2.AddServicePage">
+    <ContentPage.Content>
+        <StackLayout Padding="10">
+            <Entry x:Name="serviceName" Placeholder="Service Name"/>
+            <Editor x:Name="description" Placeholder="Description"/>
+            <Entry x:Name="price" Placeholder="Price" Keyboard="Numeric"/>
+            <Entry x:Name="duration" Placeholder="Duration (min)" Keyboard="Numeric"/>
+
+            <Button Text="Save" Clicked="OnSaveService"/>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

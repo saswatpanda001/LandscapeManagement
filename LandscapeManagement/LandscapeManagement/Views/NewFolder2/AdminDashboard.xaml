@@ -1,0 +1,113 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="LandscapeManagement.Views.NewFolder2.AdminDashboard">
+    <ContentPage.Content>
+        <ScrollView>
+            <StackLayout Padding="20" Spacing="15">
+
+                <!-- Dashboard Heading -->
+                <Label Text="Admin Dashboard" FontSize="26" FontAttributes="Bold" TextColor="#2980B9" HorizontalOptions="Center"/>
+
+                <!-- Summary Cards -->
+                <Grid ColumnSpacing="10" RowSpacing="10">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width="*" />
+                    </Grid.ColumnDefinitions>
+
+                    <!-- Total Users -->
+                    <Frame Grid.Row="0" Grid.Column="0" BackgroundColor="#3498DB" CornerRadius="15" Padding="15">
+                        <StackLayout>
+                            <Label Text="Total Users" FontSize="18" TextColor="White" FontAttributes="Bold"/>
+                            <Label x:Name="lblTotalUsers" Text="Loading..." FontSize="24" TextColor="White"/>
+                        </StackLayout>
+                    </Frame>
+
+                    <!-- Total Services -->
+                    <Frame Grid.Row="0" Grid.Column="1" BackgroundColor="#8E44AD" CornerRadius="15" Padding="15">
+                        <StackLayout>
+                            <Label Text="Total Services" FontSize="18" TextColor="White" FontAttributes="Bold"/>
+                            <Label x:Name="lblTotalServices" Text="Loading..." FontSize="24" TextColor="White"/>
+                        </StackLayout>
+                    </Frame>
+
+                    <!-- Total Bookings -->
+                    <Frame Grid.Row="1" Grid.ColumnSpan="2" BackgroundColor="#E67E22" CornerRadius="15" Padding="15">
+                        <StackLayout>
+                            <Label Text="Total Bookings" FontSize="18" TextColor="White" FontAttributes="Bold"/>
+                            <Label x:Name="lblTotalBookings" Text="Loading..." FontSize="24" TextColor="White"/>
+                        </StackLayout>
+                    </Frame>
+
+
+                </Grid>
+
+                <!-- Recent Bookings List -->
+                <Label Text="Recent Bookings" FontSize="20" FontAttributes="Bold" TextColor="#2C3E50" Padding="5"/>
+
+                <CollectionView x:Name="lstRecentBookings" 
+                SelectionMode="None"
+                ItemsSource="{Binding RecentBookings}" 
+                Margin="10">
+                    <CollectionView.ItemsLayout>
+                        <LinearItemsLayout Orientation="Vertical" ItemSpacing="15"/>
+                    </CollectionView.ItemsLayout>
+                    <CollectionView.ItemTemplate>
+                        <DataTemplate>
+                            <Frame BackgroundColor="Black" 
+                   CornerRadius="10" 
+                   Padding="15" 
+                   Margin="5" 
+                   HasShadow="True"
+                   MinimumHeightRequest="150">
+                                <StackLayout Spacing="10">
+                                    <!-- Service Name -->
+                                    <Label Text="{Binding Service.service_name}" 
+                           FontSize="18" 
+                           FontAttributes="Bold" 
+                           TextColor="White"/>
+
+                                    <!-- User Name -->
+                                    <Label Text="{Binding User.name}" 
+                           FontSize="16" 
+                           TextColor="White"/>
+
+                                    <!-- Booking Date -->
+                                    <Label Text="{Binding booking_date, StringFormat='Booked on: {0:MMM dd, yyyy}'}" 
+                           FontSize="14" 
+                           TextColor="White"/>
+
+                                    <!-- Status -->
+                                    <Label Text="{Binding status}" 
+                           FontSize="14" 
+                           TextColor="White"/>
+    
+                                </StackLayout>
+                            </Frame>
+                        </DataTemplate>
+                    </CollectionView.ItemTemplate>
+                </CollectionView>
+
+
+
+
+
+
+
+                <!-- Admin Actions -->
+                <Button Text="Manage Users" BackgroundColor="#9B59B6" TextColor="White" FontSize="18" CornerRadius="10" Clicked="GoToManageUser"/>
+              
+                <Button Text="BulkBookingDeletion" BackgroundColor="#E74C3C" TextColor="White" FontSize="18" CornerRadius="10" Clicked="OnClikedBulkBookingDeletion" />
+                <Button Text="BulkServiceDeletion" BackgroundColor="#E74C3C" TextColor="White" FontSize="18" CornerRadius="10" Clicked="OnClikedBulkServiceDeletion" />
+                <Button Text="Download Report" BackgroundColor="#E74C3C" TextColor="White" FontSize="18" CornerRadius="10" Clicked="OnGenerateReportClicked"/>
+
+            </StackLayout>
+        </ScrollView>
+
+    </ContentPage.Content>
+</ContentPage>

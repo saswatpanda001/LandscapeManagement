@@ -1,0 +1,28 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="LandscapeManagement.Views.Signup">
+    <ContentPage.Content>
+        <StackLayout Padding="30" Spacing="15" VerticalOptions="Center">
+
+            <Label Text="Sign Up" FontSize="26" FontAttributes="Bold"
+               TextColor="#2980B9" HorizontalOptions="Center"/>
+
+            <Entry x:Name="nameEntry" Placeholder="Full Name" BackgroundColor="#ECF0F1"/>
+            <Entry x:Name="emailEntry" Placeholder="Email" Keyboard="Email" BackgroundColor="#ECF0F1"/>
+            <Entry x:Name="phoneEntry" Placeholder="Phone" Keyboard="Telephone" BackgroundColor="#ECF0F1"/>
+            <Entry x:Name="passwordEntry" Placeholder="Password" IsPassword="True" BackgroundColor="#ECF0F1"/>
+            <Entry x:Name="confirmPasswordEntry" Placeholder="Confirm Password" IsPassword="True" BackgroundColor="#ECF0F1"/>
+
+            <Label x:Name="errorLabel" TextColor="Red" IsVisible="False" />
+
+            <Button Text="Sign Up" BackgroundColor="#27AE60" TextColor="White"
+                    FontSize="18" CornerRadius="10" Clicked="OnSignupClicked"/>
+
+            <Button Text="Already have an account? Login" BackgroundColor="#2980B9" 
+                TextColor="White" FontSize="16" CornerRadius="10"
+                Clicked="OnLoginClicked"/>
+
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

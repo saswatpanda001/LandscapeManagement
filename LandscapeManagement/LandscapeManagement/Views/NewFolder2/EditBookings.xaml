@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="LandscapeManagement.Views.NewFolder2.EditBookings">
+    <ContentPage.Content>
+        <StackLayout Padding="20" Spacing="15">
+
+            <Label Text="Edit Booking" FontSize="24" FontAttributes="Bold" TextColor="#2980B9" HorizontalOptions="Center"/>
+
+            <Entry x:Name="EntryCustomerName" Placeholder="Enter Customer Name" FontSize="18"/>
+            <Entry x:Name="EntryBookingDate" Placeholder="Enter Booking Date (e.g., March 1, 2025)" FontSize="18"/>
+            <Entry x:Name="EntryService" Placeholder="Enter Service Name" FontSize="18"/>
+
+            <Button Text="Save Changes" BackgroundColor="#27AE60" TextColor="White" FontSize="18" Clicked="OnSave"/>
+            <Button Text="Cancel" BackgroundColor="#E74C3C" TextColor="White" FontSize="18" Clicked="OnCancel"/>
+
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

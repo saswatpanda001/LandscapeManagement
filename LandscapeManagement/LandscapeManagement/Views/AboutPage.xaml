@@ -1,0 +1,114 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="LandscapeManagement.Views.AboutPage"
+             xmlns:vm="clr-namespace:LandscapeManagement.ViewModels"
+             Title="{Binding Title}">
+    
+    
+    
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <Color x:Key="Accent">#96d1ff</Color>
+        </ResourceDictionary>
+    </ContentPage.Resources>
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+        <StackLayout BackgroundColor="{StaticResource Accent}" VerticalOptions="FillAndExpand" HorizontalOptions="Fill">
+            <StackLayout Orientation="Horizontal" HorizontalOptions="Center" VerticalOptions="Center">
+                <ContentView Padding="0,40,0,40" VerticalOptions="FillAndExpand">
+                    <Image Source="xamarin_logo.png" VerticalOptions="Center" HeightRequest="64" />
+                </ContentView>
+            </StackLayout>
+        </StackLayout>
+        <ScrollView>
+            <StackLayout BackgroundColor="White" Padding="20">
+
+                <!-- Hero Section -->
+                <Frame BackgroundColor="#2980B9" Padding="40" CornerRadius="10">
+                    <Label Text="Transform Your Outdoor Space"
+                       FontSize="26" TextColor="White"
+                       FontAttributes="Bold" HorizontalOptions="Center"
+                       VerticalOptions="Center"/>
+                </Frame>
+
+                <!-- About Section -->
+                <Frame BackgroundColor="#D5F5E3" Padding="20" CornerRadius="10" Margin="10,20,10,10">
+                    <Label Text="Welcome to GreenScape Landscaping"
+                       FontSize="22" FontAttributes="Bold"
+                       TextColor="#1B4F72" HorizontalOptions="Center"/>
+                    
+                </Frame>
+
+                <!-- Services Section -->
+                <Label Text="Our Services" FontSize="22"
+                   FontAttributes="Bold" TextColor="#154360"
+                   HorizontalOptions="Center" Margin="10,10,10,10"/>
+
+                <Grid ColumnSpacing="10" RowSpacing="10">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="100"/>
+                        <RowDefinition Height="100"/>
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+
+                    <!-- Service 1 -->
+                    <Frame Grid.Row="0" Grid.Column="0" BackgroundColor="#F9E79F" CornerRadius="10">
+                        <Label Text="Lawn Mowing" FontSize="18" FontAttributes="Bold"
+                           TextColor="#6D4C41" HorizontalOptions="Center" VerticalOptions="Center"/>
+                    </Frame>
+
+                    <!-- Service 2 -->
+                    <Frame Grid.Row="0" Grid.Column="1" BackgroundColor="#FAD7A0" CornerRadius="10">
+                        <Label Text="Tree Trimming" FontSize="18" FontAttributes="Bold"
+                           TextColor="#784212" HorizontalOptions="Center" VerticalOptions="Center"/>
+                    </Frame>
+
+                    <!-- Service 3 -->
+                    <Frame Grid.Row="1" Grid.Column="0" BackgroundColor="#A3E4D7" CornerRadius="10">
+                        <Label Text="Garden Design" FontSize="18" FontAttributes="Bold"
+                           TextColor="#0E6655" HorizontalOptions="Center" VerticalOptions="Center"/>
+                    </Frame>
+
+                    <!-- Service 4 -->
+                    <Frame Grid.Row="1" Grid.Column="1" BackgroundColor="#D7BDE2" CornerRadius="10">
+                        <Label Text="Water Features" FontSize="18" FontAttributes="Bold"
+                           TextColor="#512E5F" HorizontalOptions="Center" VerticalOptions="Center"/>
+                    </Frame>
+                </Grid>
+
+                <!-- Call to Action Buttons -->
+                <StackLayout Padding="10" Spacing="10" Margin="10,20,10,10">
+                    <Button Text="Admin" BackgroundColor="#27AE60"
+                        TextColor="White" FontSize="18" CornerRadius="10"
+                        Clicked="OnAdminLoginClicked"
+                        />
+                    <Button Text="Customer" BackgroundColor="#2980B9"
+                        TextColor="White" FontSize="18" CornerRadius="10"
+                        Clicked="OnCustomerLoginClicked"/>
+
+                </StackLayout>
+
+                <!-- Contact Section -->
+                <Frame BackgroundColor="#F1C40F" Padding="20" CornerRadius="10">
+                    <StackLayout>
+                        <Label Text="Have Questions?" FontSize="18"
+                           FontAttributes="Bold" TextColor="White"/>
+                        <Label Text="Call us: +1 234 567 890" TextColor="White"/>
+                        <Label Text="Email: support@greenscape.com" TextColor="White"/>
+                    </StackLayout>
+                </Frame>
+
+            </StackLayout>
+        </ScrollView>
+
+    </Grid>
+
+</ContentPage>

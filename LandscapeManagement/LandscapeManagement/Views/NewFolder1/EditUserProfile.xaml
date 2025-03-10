@@ -1,0 +1,54 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="LandscapeManagement.Views.NewFolder1.EditUserProfile">
+    <ContentPage.Content>
+        <ScrollView>
+            <StackLayout Padding="20" Spacing="20">
+
+                <!-- Profile Picture Section -->
+                <Frame CornerRadius="100" HeightRequest="150" WidthRequest="150"
+                   BackgroundColor="White" HasShadow="True"
+                   HorizontalOptions="Center">
+                    <Image Source="profile_placeholder.png" HeightRequest="150" WidthRequest="150"/>
+                </Frame>
+                <Button Text="Change Profile Picture" BackgroundColor="#2980B9"
+                    TextColor="White" FontSize="16" CornerRadius="10"
+                    HorizontalOptions="Center"/>
+
+                <!-- Full Name -->
+                <Label Text="Full Name" FontSize="16" TextColor="#2C3E50"/>
+                <Entry x:Name="nameEntry" Placeholder="Enter your full name" FontSize="16"
+                       BackgroundColor="#ECF0F1" TextColor="#2C3E50"/>
+
+                <!-- Email -->
+                <Label Text="Email" FontSize="16" TextColor="#2C3E50"/>
+                <Entry x:Name="emailEntry" Placeholder="Enter your email" Keyboard="Email"
+                       FontSize="16" BackgroundColor="#ECF0F1" TextColor="#2C3E50"/>
+
+                <!-- Phone Number -->
+                <Label Text="Phone Number" FontSize="16" TextColor="#2C3E50"/>
+                <Entry x:Name="phoneEntry" Placeholder="Enter your phone number" Keyboard="Telephone"
+                       FontSize="16" BackgroundColor="#ECF0F1" TextColor="#2C3E50"/>
+
+                
+
+                <!-- Address -->
+                <Label Text="Address" FontSize="16" TextColor="#2C3E50"/>
+                <Editor x:Name="addressEditor" Placeholder="Enter your address"
+                        AutoSize="TextChanges" BackgroundColor="#ECF0F1"
+                        FontSize="16" TextColor="#2C3E50"/>
+
+                <!-- Save Button -->
+                <Button Text="Save Changes"
+                    BackgroundColor="#27AE60"
+                    TextColor="White"
+                    FontSize="18"
+                    CornerRadius="10"
+                    HorizontalOptions="FillAndExpand"
+                    Clicked="SaveChanges_Clicked"/>
+
+            </StackLayout>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>

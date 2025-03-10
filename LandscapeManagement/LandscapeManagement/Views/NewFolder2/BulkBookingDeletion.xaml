@@ -1,0 +1,61 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage 
+    xmlns="http://xamarin.com/schemas/2014/forms" 
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    x:Class="LandscapeManagement.Views.NewFolder2.BulkBookingDeletion"
+    Title="Bulk Delete Bookings"
+    BackgroundColor="#FFFFFF">
+
+    <StackLayout Padding="20" Spacing="15">
+        <!-- Page Title -->
+        <Label Text="Bulk Delete Bookings" 
+               FontSize="24" 
+               FontAttributes="Bold" 
+               HorizontalOptions="Center" />
+
+        <!-- CollectionView with Multiple Selection -->
+        <CollectionView x:Name="BookingsCollectionView" 
+                        SelectionMode="None">
+            <CollectionView.ItemsLayout>
+                <LinearItemsLayout Orientation="Vertical" ItemSpacing="15"/>
+            </CollectionView.ItemsLayout>
+            <CollectionView.ItemTemplate>
+                <DataTemplate>
+                    <Frame BackgroundColor="#F0F0F0" 
+                           CornerRadius="10" 
+                           Padding="15" 
+                           Margin="5" 
+                           HasShadow="True"
+                           MinimumHeightRequest="120">
+                        <StackLayout Orientation="Horizontal" Spacing="10">
+                            <CheckBox IsChecked="{Binding IsSelected, Mode=TwoWay}" VerticalOptions="Center"/>
+                            <StackLayout Spacing="5" HorizontalOptions="FillAndExpand">
+                                <Label Text="{Binding Service.service_name}" 
+                                       FontSize="18" 
+                                       FontAttributes="Bold" 
+                                       TextColor="#333"/>
+                                <Label Text="{Binding User.name}" 
+                                       FontSize="14" 
+                                       TextColor="#666"/>
+                                <Label Text="{Binding booking_date, StringFormat='Booked on: {0:MMM dd, yyyy}'}" 
+                                       FontSize="14" 
+                                       TextColor="#666"/>
+                                <Label Text="{Binding status}" 
+                                       FontSize="14" 
+                                       TextColor="#666"/>
+                            </StackLayout>
+                        </StackLayout>
+                    </Frame>
+                </DataTemplate>
+            </CollectionView.ItemTemplate>
+        </CollectionView>
+
+        <!-- Delete Selected Button -->
+        <Button Text="Delete Selected Bookings" 
+                BackgroundColor="#F44336" 
+                TextColor="White" 
+                CornerRadius="10" 
+                HeightRequest="50"
+                Clicked="OnDeleteSelectedClicked"/>
+    </StackLayout>
+</ContentPage>

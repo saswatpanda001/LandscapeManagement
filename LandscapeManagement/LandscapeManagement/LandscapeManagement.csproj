@@ -1,0 +1,121 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+    <ProduceReferenceAssembly>true</ProduceReferenceAssembly>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="NewFolder\**" />
+    <Compile Remove="Views\NewFolder\**" />
+    <EmbeddedResource Remove="NewFolder\**" />
+    <EmbeddedResource Remove="Views\NewFolder\**" />
+    <None Remove="NewFolder\**" />
+    <None Remove="Views\NewFolder\**" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Remove="Services\AuthService.cs" />
+    <Compile Remove="Services\FileHelper.cs.cs" />
+    <Compile Remove="Services\IFileHelper.cs" />
+    <Compile Remove="Services\SerService.xaml.cs" />
+    <Compile Remove="ViewModels\AdminLoginViewModel.cs" />
+    <Compile Remove="Views\NewFolder1\Service.xaml.cs" />
+    <Compile Remove="Views\NewFolder1\ShowServices.cs" />
+    <Compile Remove="Views\NewFolder2\AddBookings.xaml.cs" />
+    <Compile Remove="Views\NewFolder2\AddServicePage.xaml.cs" />
+    <Compile Remove="Views\NewFolder2\AddUsers.xaml.cs" />
+    <Compile Remove="Views\NewFolder2\BookingsPage.xaml.cs" />
+    <Compile Remove="Views\NewFolder2\BulkUserDeletion.xaml.cs" />
+    <Compile Remove="Views\NewFolder2\EditBookingPage.xaml.cs" />
+    <Compile Remove="Views\NewFolder2\EditBookings.xaml.cs" />
+    <Compile Remove="Views\NewFolder2\EditUsers.xaml.cs" />
+    <Compile Remove="Views\NewFolder2\FileHelper.cs" />
+    <Compile Remove="Views\NewFolder2\ManageBookings.xaml.cs" />
+    <Compile Remove="Views\NewFolder2\ManageUsers.xaml.cs" />
+    <Compile Remove="Views\NewFolder2\ServicePage.xaml.cs" />
+    <Compile Remove="Views\NewFolder2\UserFormPage.xaml.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Remove="Services\SerService.xaml" />
+    <EmbeddedResource Remove="Views\NewFolder1\Service.xaml" />
+    <EmbeddedResource Remove="Views\NewFolder2\AddBookings.xaml" />
+    <EmbeddedResource Remove="Views\NewFolder2\AddServicePage.xaml" />
+    <EmbeddedResource Remove="Views\NewFolder2\AddUsers.xaml" />
+    <EmbeddedResource Remove="Views\NewFolder2\BookingsPage.xaml" />
+    <EmbeddedResource Remove="Views\NewFolder2\BulkUserDeletion.xaml" />
+    <EmbeddedResource Remove="Views\NewFolder2\EditBookingPage.xaml" />
+    <EmbeddedResource Remove="Views\NewFolder2\EditBookings.xaml" />
+    <EmbeddedResource Remove="Views\NewFolder2\EditUsers.xaml" />
+    <EmbeddedResource Remove="Views\NewFolder2\ManageBookings.xaml" />
+    <EmbeddedResource Remove="Views\NewFolder2\ManageUsers.xaml" />
+    <EmbeddedResource Remove="Views\NewFolder2\ServicePage.xaml" />
+    <EmbeddedResource Remove="Views\NewFolder2\UserFormPage.xaml" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
+    <PackageReference Include="Xamarin.Forms" Version="5.0.0.2012" />  
+    <PackageReference Include="Xamarin.Essentials" Version="1.6.1" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="ViewModels\NewFolder1\" />
+    <Folder Include="ViewModels\NewFolder2\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Update="Views\NewFolder1\BookingConfirmation.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Views\NewFolder1\BookingHistory.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Views\NewFolder1\EditUserProfile.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Views\NewFolder1\Logout.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Views\NewFolder1\PasswordReset.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Views\NewFolder1\ServiceBookingPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Views\NewFolder1\ShowServices.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Views\NewFolder1\UserDashboard.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Views\NewFolder1\UserLoginPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Views\NewFolder1\UserProfile.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Views\NewFolder2\AdminDashboard.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Views\NewFolder2\AdminLogin.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Views\NewFolder2\BulkBookingDeletion.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Views\NewFolder2\BulkServiceDeletion.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Views\NewFolder2\ManageUserDetailPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Views\NewFolder2\ManageUserPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Views\Signup.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+  </ItemGroup>
+</Project>

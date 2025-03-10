@@ -1,0 +1,41 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="LandscapeManagement.Views.NewFolder1.UserProfile">
+    <ContentPage.Content>
+        <ScrollView>
+            <StackLayout Padding="20" Spacing="20" VerticalOptions="CenterAndExpand">
+
+            
+                <!-- User Info -->
+                <Label x:Name="UserNameLabel" FontSize="26" FontAttributes="Bold"
+                   TextColor="#2980B9" HorizontalOptions="Center"/>
+                <Label x:Name="UserEmailLabel" FontSize="16"
+                   TextColor="#7F8C8D" HorizontalOptions="Center"/>
+
+                <!-- Profile Details Section -->
+                <Frame Padding="15" CornerRadius="15" BackgroundColor="White" HasShadow="True">
+                    <StackLayout Spacing="10">
+                        <StackLayout Orientation="Horizontal" Spacing="10">
+                            <Image Source="phone_icon.png" WidthRequest="20" HeightRequest="20"/>
+                            <Label x:Name="UserPhoneLabel" FontSize="16" TextColor="#2C3E50"/>
+                        </StackLayout>
+
+                        <StackLayout Orientation="Horizontal" Spacing="10">
+                            <Image Source="location_icon.png" WidthRequest="20" HeightRequest="20"/>
+                            <Label x:Name="UserAddressLabel" FontSize="16" TextColor="#2C3E50"/>
+                        </StackLayout>
+                    </StackLayout>
+                </Frame>
+
+                <!-- Action Buttons -->
+                <Button Text="Edit Profile" BackgroundColor="#27AE60" TextColor="White"
+                    FontSize="18" CornerRadius="10" Clicked="GoToEditProfile"/>
+                <Button Text="Change Password" BackgroundColor="#2980B9" TextColor="White"
+                    FontSize="18" CornerRadius="10" Clicked="GoToResetPassword"/>
+                <Button Text="Logout" BackgroundColor="#E74C3C" TextColor="White"
+                    FontSize="18" CornerRadius="10" Clicked="GoToLogout"/>
+            </StackLayout>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>

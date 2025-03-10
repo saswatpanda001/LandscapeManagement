@@ -1,0 +1,64 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="LandscapeManagement.Views.NewFolder1.UserDashboard">
+    <ContentPage.Content>
+        <StackLayout Padding="20" Spacing="15">
+
+            <!-- Welcome Section -->
+            <Frame BackgroundColor="#2980B9" CornerRadius="15" Padding="20">
+                <StackLayout>
+                    <Label x:Name="WelcomeLabel" Text="Welcome, " FontSize="24" FontAttributes="Bold" TextColor="White"/>
+
+                    <Label Text="Quickly access your bookings and manage your profile." FontSize="16" TextColor="White"/>
+                </StackLayout>
+            </Frame>
+
+            <!-- Quick Access Buttons -->
+            <StackLayout Orientation="Horizontal" Spacing="10">
+                <Button Text="My Bookings" BackgroundColor="#27AE60" TextColor="White" FontSize="16" CornerRadius="10" Clicked="GoToBookingHistory"/>
+                <Button Text="Profile" BackgroundColor="#E67E22" TextColor="White" FontSize="16" CornerRadius="10" Clicked="GoToProfile"/>
+            </StackLayout>
+
+            <!-- Services Section -->
+            <Label Text="Available Services" FontSize="20" FontAttributes="Bold" TextColor="#2C3E50"/>
+            <Grid ColumnSpacing="10" RowSpacing="10">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="100"/>
+                    <RowDefinition Height="100"/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+
+                <!-- Service 1 -->
+                <Frame Grid.Row="0" Grid.Column="0" BackgroundColor="#F9E79F" CornerRadius="10">
+                    <Label Text="Lawn Mowing" FontSize="18" FontAttributes="Bold"
+                           TextColor="#6D4C41" HorizontalOptions="Center" VerticalOptions="Center"/>
+                </Frame>
+
+                <!-- Service 2 -->
+                <Frame Grid.Row="0" Grid.Column="1" BackgroundColor="#FAD7A0" CornerRadius="10">
+                    <Label Text="Tree Trimming" FontSize="18" FontAttributes="Bold"
+                           TextColor="#784212" HorizontalOptions="Center" VerticalOptions="Center"/>
+                </Frame>
+
+                <!-- Service 3 -->
+                <Frame Grid.Row="1" Grid.Column="0" BackgroundColor="#A3E4D7" CornerRadius="10">
+                    <Label Text="Garden Design" FontSize="18" FontAttributes="Bold"
+                           TextColor="#0E6655" HorizontalOptions="Center" VerticalOptions="Center"/>
+                </Frame>
+
+                <!-- Service 4 -->
+                <Frame Grid.Row="1" Grid.Column="1" BackgroundColor="#D7BDE2" CornerRadius="10">
+                    <Label Text="Water Features" FontSize="18" FontAttributes="Bold"
+                           TextColor="#512E5F" HorizontalOptions="Center" VerticalOptions="Center"/>
+                </Frame>
+            </Grid>
+
+            <!-- CTA Button -->
+            <Button Text="Book a Service" BackgroundColor="#27AE60" TextColor="White" FontSize="18" CornerRadius="10" Clicked="GoToServices"/>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

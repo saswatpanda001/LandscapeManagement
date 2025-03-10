@@ -1,0 +1,56 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="LandscapeManagement.Views.NewFolder1.ShowServices"
+             BackgroundColor="#F5F5F5">
+
+    <ContentPage.Content>
+        <StackLayout Padding="20">
+
+            <Label Text="Available Services"
+                   FontSize="26"
+                   FontAttributes="Bold"
+                   TextColor="#2C3E50"
+                   HorizontalOptions="Center"
+                   Margin="0,10,0,20"/>
+
+            <ListView x:Name="ServiceListView"
+                      ItemTapped="OnServiceSelected"
+                      HasUnevenRows="True"
+                      SeparatorVisibility="None">
+
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <Frame CornerRadius="12"
+                                   Padding="15"
+                                   Margin="5"
+                                   BackgroundColor="White"
+                                   HasShadow="True">
+
+                                <StackLayout Spacing="8">
+                                    <Label Text="{Binding service_name}" 
+                                           FontSize="20" 
+                                           FontAttributes="Bold"
+                                           TextColor="#2980B9"/>
+
+                                    <Label Text="{Binding description}" 
+                                           FontSize="16" 
+                                           TextColor="Gray"/>
+
+                                    <Label Text="{Binding price, StringFormat='Price: {0:C}'}" 
+                                           FontSize="16"
+                                           TextColor="#27AE60"
+                                           FontAttributes="Bold"/>
+                                </StackLayout>
+
+                            </Frame>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+
+            </ListView>
+
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

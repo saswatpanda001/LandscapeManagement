@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="LandscapeManagement.Views.NewFolder1.Logout">
+    <ContentPage.Content>
+        <StackLayout Padding="30" Spacing="20" VerticalOptions="Center" HorizontalOptions="Center">
+
+            <Image Source="logout_icon.png" HeightRequest="100" WidthRequest="100" HorizontalOptions="Center"/>
+
+            <Label Text="Are you sure you want to logout?" FontSize="22" FontAttributes="Bold"
+               TextColor="#E74C3C" HorizontalOptions="Center"/>
+
+            <Label Text="You will need to log in again to access your account." FontSize="14"
+               TextColor="#7F8C8D" HorizontalOptions="Center"/>
+
+            <StackLayout Orientation="Horizontal" Spacing="15" HorizontalOptions="Center">
+                <Button Text="Cancel" BackgroundColor="#2980B9" TextColor="White"
+                    FontSize="18" CornerRadius="10" Clicked="OnCancelClicked"/>
+
+                <Button Text="Logout" BackgroundColor="#E74C3C" TextColor="White"
+                    FontSize="18" CornerRadius="10" Clicked="OnLogoutClicked"/>
+            </StackLayout>
+
+        </StackLayout>
+    </ContentPage.Content>
+
+</ContentPage>

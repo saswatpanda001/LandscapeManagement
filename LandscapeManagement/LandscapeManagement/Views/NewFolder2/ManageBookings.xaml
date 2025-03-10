@@ -1,0 +1,42 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="LandscapeManagement.Views.NewFolder2.ManageBookings">
+    <ContentPage.Content>
+        <StackLayout Padding="20" Spacing="10">
+
+            <!-- Page Title -->
+            <Label Text="Manage Bookings" FontSize="26" FontAttributes="Bold" TextColor="#2980B9" HorizontalOptions="Center"/>
+
+            <!-- Add Booking Button -->
+            <Button Text="Add New Booking" BackgroundColor="#27AE60" TextColor="White" FontSize="18" Clicked="OnAddBookingClicked"/>
+
+            <!-- Bookings List -->
+            <ListView ItemsSource="{Binding Bookings}" HasUnevenRows="True">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <Frame Padding="10" CornerRadius="10" BackgroundColor="#ECF0F1" Margin="5">
+                                <StackLayout>
+                                    <Label Text="{Binding CustomerName}" FontSize="18" FontAttributes="Bold" TextColor="#2C3E50"/>
+                                    <Label Text="{Binding BookingDate}" FontSize="14" TextColor="#7F8C8D"/>
+                                    <Label Text="{Binding Service}" FontSize="14" TextColor="#7F8C8D"/>
+                                    <StackLayout Orientation="Horizontal" Spacing="10">
+                                        <!-- Edit Button -->
+                                        <Button Text="Edit" BackgroundColor="#2980B9" TextColor="White"
+                                                Clicked="OnClickedEditBookings" />
+                                        <!-- Delete Button -->
+                                        <Button Text="Delete" BackgroundColor="#E74C3C" TextColor="White"
+                                                Command="{Binding DeleteCommand}" CommandParameter="{Binding}" />
+                                    </StackLayout>
+                                </StackLayout>
+                            </Frame>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+
+        </StackLayout>
+    </ContentPage.Content>
+
+</ContentPage>

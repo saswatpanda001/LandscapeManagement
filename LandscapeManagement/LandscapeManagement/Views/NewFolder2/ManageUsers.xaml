@@ -1,0 +1,40 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="LandscapeManagement.Views.NewFolder2.ManageUsers">
+    <ContentPage.Content>
+        <StackLayout Padding="20" Spacing="10">
+
+            <!-- Page Title -->
+            <Label Text="Manage Users" FontSize="26" FontAttributes="Bold" TextColor="#2980B9" HorizontalOptions="Center"/>
+
+            <!-- Add User Button -->
+            <Button Text="Add New User" BackgroundColor="#27AE60" TextColor="White" FontSize="18" Clicked="OnAddUserClicked"/>
+
+            <!-- Users List -->
+            <ListView x:Name="UsersListView" ItemsSource="{Binding Users}" HasUnevenRows="True">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <Frame Padding="10" CornerRadius="10" BackgroundColor="#ECF0F1">
+                                <StackLayout Orientation="Vertical">
+                                    <Label Text="{Binding Name}" FontSize="18" FontAttributes="Bold" TextColor="#2C3E50"/>
+                                    <Label Text="{Binding Email}" FontSize="14" TextColor="#7F8C8D"/>
+                                    <StackLayout Orientation="Horizontal" Spacing="10">
+                                        <!-- Edit Button -->
+                                        <Button Text="Edit" BackgroundColor="#2980B9" TextColor="White"
+                                                Clicked="OnEditUserClicked" CommandParameter="{Binding}" />
+                                        <!-- Delete Button -->
+                                        <Button Text="Delete" BackgroundColor="#E74C3C" TextColor="White"
+                                                Clicked="OnDeleteUserClicked" CommandParameter="{Binding}" />
+                                    </StackLayout>
+                                </StackLayout>
+                            </Frame>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

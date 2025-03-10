@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="LandscapeManagement.Views.NewFolder2.AddUsers">
+    <ContentPage.Content>
+        <StackLayout Padding="20" Spacing="15">
+
+            <Label Text="Add New User" FontSize="24" FontAttributes="Bold" TextColor="#2980B9" HorizontalOptions="Center"/>
+
+            <Entry x:Name="EntryName" Placeholder="Enter Full Name" FontSize="18"/>
+            <Entry x:Name="EntryEmail" Placeholder="Enter Email" FontSize="18" Keyboard="Email"/>
+            <Entry x:Name="EntryPassword" Placeholder="Enter Password" FontSize="18" IsPassword="True"/>
+
+            <Button Text="Save User" BackgroundColor="#27AE60" TextColor="White" FontSize="18" Clicked="OnSaveUserClicked"/>
+            <Button Text="Cancel" BackgroundColor="#E74C3C" TextColor="White" FontSize="18" Clicked="OnCancelClicked"/>
+
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

@@ -1,0 +1,22 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="LandscapeManagement.Views.NewFolder1.UserLoginPage">
+    <ContentPage.Content>
+        <StackLayout Padding="30" Spacing="20" VerticalOptions="Center">
+
+            <Label Text="Login" FontSize="26" FontAttributes="Bold"
+                   TextColor="#2980B9" HorizontalOptions="Center"/>
+
+            <Entry x:Name="emailEntry" Placeholder="Email" Keyboard="Email" BackgroundColor="#ECF0F1"/>
+            <Entry x:Name="passwordEntry" Placeholder="Password" IsPassword="True" BackgroundColor="#ECF0F1"/>
+
+            <Button Text="Login" BackgroundColor="#27AE60" TextColor="White" FontSize="18" CornerRadius="10" Clicked="HandleLogin"/>
+            <Button Text="Sign Up" BackgroundColor="#2980B9" TextColor="White" FontSize="18" CornerRadius="10"
+                    Clicked="OnSignUpClicked"/>
+            <Button Text="Forgot Password?" BackgroundColor="#E74C3C" TextColor="White" FontSize="16" CornerRadius="10"
+                    Clicked="OnForgotPasswordClicked"/>
+
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

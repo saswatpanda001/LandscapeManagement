@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="LandscapeManagement.Views.NewFolder2.UserFormPage">
+    <ContentPage.Content>
+        <StackLayout Padding="20" Spacing="10">
+
+            <Label x:Name="PageTitle" FontSize="26" FontAttributes="Bold" TextColor="#2980B9" HorizontalOptions="Center"/>
+
+            <Entry x:Name="NameEntry" Placeholder="Full Name" />
+            <Entry x:Name="EmailEntry" Placeholder="Email" Keyboard="Email"/>
+            <Entry x:Name="PhoneEntry" Placeholder="Phone" Keyboard="Telephone"/>
+            <Entry x:Name="AddressEntry" Placeholder="Address"/>
+
+            <!-- Save Button -->
+            <Button x:Name="SaveButton" BackgroundColor="#27AE60" TextColor="White" FontSize="18" Clicked="OnSaveClicked"/>
+
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

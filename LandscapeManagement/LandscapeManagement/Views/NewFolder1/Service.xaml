@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:System="clr-namespace:System;assembly=netstandard"
+             x:Class="LandscapeManagement.Views.NewFolder1.Service">
+    <ContentPage.Content>
+        <StackLayout Padding="20" Spacing="20" BackgroundColor="#F5F5F5">
+
+            <Frame BackgroundColor="#3498DB" CornerRadius="15" Padding="20" HasShadow="True">
+                <Label x:Name="SelectedServiceLabel" 
+                       FontSize="20" 
+                       FontAttributes="Bold" 
+                       TextColor="White"/>
+            </Frame>
+
+            <Label Text="Select Date:" FontSize="18" FontAttributes="Bold" TextColor="#2C3E50"/>
+            <DatePicker x:Name="ServiceDatePicker" MinimumDate="{x:Static System:DateTime.Today}"/>
+
+            <Label Text="Select Time:" FontSize="18" FontAttributes="Bold" TextColor="#2C3E50"/>
+            <TimePicker x:Name="ServiceTimePicker"/>
+
+            <Button Text="Book Now" 
+                    BackgroundColor="#27AE60" 
+                    TextColor="White" 
+                    FontSize="18" 
+                    CornerRadius="10"
+                    Clicked="OnBookNowClicked"/>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

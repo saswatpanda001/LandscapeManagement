@@ -1,0 +1,31 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="LandscapeManagement.Views.NewFolder1.BookingConfirmation">
+    <ContentPage.Content>
+        <StackLayout Padding="30" Spacing="20" VerticalOptions="Center" HorizontalOptions="Center">
+
+            <Image Source="success_icon.png" HeightRequest="100" WidthRequest="100" HorizontalOptions="Center"/>
+
+            <Label Text="Booking Confirmed!" FontSize="26" FontAttributes="Bold"
+               TextColor="#27AE60" HorizontalOptions="Center"/>
+
+            <Label Text="Your service has been successfully booked." FontSize="16"
+               TextColor="#7F8C8D" HorizontalOptions="Center"/>
+
+            <Frame Padding="15" CornerRadius="10" BackgroundColor="#ECF0F1">
+                <StackLayout>
+                    <Label Text="Service: Lawn Mowing" FontSize="18" FontAttributes="Bold" TextColor="#2C3E50"/>
+                    <Label Text="Date: March 5, 2025" FontSize="14" TextColor="#7F8C8D"/>
+                    <Label Text="Time: 10:30 AM" FontSize="14" TextColor="#7F8C8D"/>
+                    <Label Text="Status: Confirmed" FontSize="14" FontAttributes="Bold" TextColor="#27AE60"/>
+                </StackLayout>
+            </Frame>
+
+            <Button Text="Go to Dashboard" BackgroundColor="#2980B9" TextColor="White"
+                FontSize="18" CornerRadius="10" Clicked="GoToDashboard"/>
+
+        </StackLayout>
+    </ContentPage.Content>
+
+</ContentPage>

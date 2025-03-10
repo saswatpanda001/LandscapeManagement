@@ -1,0 +1,34 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="LandscapeManagement.Views.NewFolder2.AdminLogin">
+    <ContentPage.Content>
+        <StackLayout Padding="30" Spacing="20" VerticalOptions="Center">
+
+            <!-- Login Heading -->
+            <Label Text="Admin Login" FontSize="28" FontAttributes="Bold" TextColor="#2980B9" HorizontalOptions="Center"/>
+
+            <!-- Email Entry -->
+            <Frame Padding="10" CornerRadius="10" BorderColor="#BDC3C7">
+                <StackLayout Orientation="Horizontal" Spacing="10">
+                    <Image Source="user_icon.png" HeightRequest="25" WidthRequest="25"/>
+                    <Entry x:Name="EmailEntry" Placeholder="Enter Email" FontSize="18" TextColor="#2C3E50" Keyboard="Email"/>
+                </StackLayout>
+            </Frame>
+
+            <!-- Password Entry with Show/Hide Toggle -->
+            <Frame Padding="10" CornerRadius="10" BorderColor="#BDC3C7">
+                <StackLayout Orientation="Horizontal" Spacing="10">
+                    <Image Source="password_icon.png" HeightRequest="25" WidthRequest="25"/>
+                    <Entry x:Name="PasswordEntry" Placeholder="Enter Password" IsPassword="True" FontSize="18" TextColor="#2C3E50"/>
+                    <ImageButton Source="eye_icon.png" HeightRequest="25" WidthRequest="25" Clicked="TogglePasswordVisibility"/>
+                </StackLayout>
+            </Frame>
+
+            <!-- Login Button -->
+            <Button Text="Login" BackgroundColor="#27AE60" TextColor="White" FontSize="18" CornerRadius="10" Clicked="HandleAdminLogin"/>
+            <Button Text="Forgot Passowrd" BackgroundColor="#27AE60" TextColor="White" FontSize="18" CornerRadius="10" Clicked="GoToForgotPassword"/>
+
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

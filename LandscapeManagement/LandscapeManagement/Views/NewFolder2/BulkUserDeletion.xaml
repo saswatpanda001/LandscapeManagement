@@ -1,0 +1,47 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="LandscapeManagement.Views.NewFolder2.BulkUserDeletion">
+    <ContentPage.Content>
+        <StackLayout Padding="20" Spacing="15">
+
+            <Label Text="Bulk Delete Users" FontSize="24" FontAttributes="Bold" TextColor="#2980B9" HorizontalOptions="Center"/>
+
+            <StackLayout>
+                <!-- User 1 -->
+                <StackLayout Orientation="Horizontal" Padding="10">
+                    <CheckBox VerticalOptions="Center"/>
+                    <StackLayout Orientation="Vertical" Padding="10">
+                        <Label Text="John Doe" FontSize="18" FontAttributes="Bold" TextColor="#2C3E50"/>
+                        <Label Text="Email: johndoe@example.com" FontSize="14" TextColor="#7F8C8D"/>
+                        <Label Text="Role: Customer" FontSize="14" TextColor="#7F8C8D"/>
+                    </StackLayout>
+                </StackLayout>
+
+                <!-- User 2 -->
+                <StackLayout Orientation="Horizontal" Padding="10">
+                    <CheckBox VerticalOptions="Center"/>
+                    <StackLayout Orientation="Vertical" Padding="10">
+                        <Label Text="Alice Smith" FontSize="18" FontAttributes="Bold" TextColor="#2C3E50"/>
+                        <Label Text="Email: alicesmith@example.com" FontSize="14" TextColor="#7F8C8D"/>
+                        <Label Text="Role: Customer" FontSize="14" TextColor="#7F8C8D"/>
+                    </StackLayout>
+                </StackLayout>
+
+                <!-- User 3 -->
+                <StackLayout Orientation="Horizontal" Padding="10">
+                    <CheckBox VerticalOptions="Center"/>
+                    <StackLayout Orientation="Vertical" Padding="10">
+                        <Label Text="Robert Brown" FontSize="18" FontAttributes="Bold" TextColor="#2C3E50"/>
+                        <Label Text="Email: robertbrown@example.com" FontSize="14" TextColor="#7F8C8D"/>
+                        <Label Text="Role: Customer" FontSize="14" TextColor="#7F8C8D"/>
+                    </StackLayout>
+                </StackLayout>
+            </StackLayout>
+
+            <Button Text="Delete Selected Users" BackgroundColor="#E74C3C" TextColor="White" FontSize="18"/>
+
+        </StackLayout>
+    </ContentPage.Content>
+    
+</ContentPage>
