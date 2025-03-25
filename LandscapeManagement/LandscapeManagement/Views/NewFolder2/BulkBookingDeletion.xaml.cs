@@ -12,7 +12,6 @@ namespace LandscapeManagement.Views.NewFolder2
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class BulkBookingDeletion : ContentPage
     {
-        // Using an observable collection to allow UI updates.
         public ObservableCollection<Booking> Bookings { get; set; }
         private readonly BookingService _bookingService = new BookingService();
 
@@ -21,6 +20,12 @@ namespace LandscapeManagement.Views.NewFolder2
             InitializeComponent();
             Bookings = new ObservableCollection<Booking>();
             BindingContext = this;
+            NavigationPage.SetHasBackButton(this, false);
+        }
+
+        private async void OnHomeClicked(object sender, EventArgs e)
+        {
+            await Navigation.PushAsync(new AdminDashboard());
         }
 
         protected override async void OnAppearing()
@@ -35,9 +40,30 @@ namespace LandscapeManagement.Views.NewFolder2
             Bookings.Clear();
             foreach (var booking in bookings)
             {
-                booking.IsSelected = false; // Initialize selection to false
+                booking.IsSelected = false;
                 Bookings.Add(booking);
             }
+            BookingsCollectionView.ItemsSource = Bookings;
+        }
+
+        private void OnSelectAllClicked(object sender, EventArgs e)
+        {
+            foreach (var booking in Bookings)
+            {
+                booking.IsSelected = true;
+            }
+            BookingsCollectionView.ItemsSource = null; // Refresh the view
+            BookingsCollectionView.ItemsSource = Bookings;
+        }
+
+
+        private void OnDeselectAllClicked(object sender, EventArgs e)
+        {
+            foreach (var booking in Bookings)
+            {
+                booking.IsSelected = false;
+            }
+            BookingsCollectionView.ItemsSource = null; // Refresh the view
             BookingsCollectionView.ItemsSource = Bookings;
         }
 

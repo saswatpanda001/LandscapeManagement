@@ -4,6 +4,10 @@
              x:Class="LandscapeManagement.Views.NewFolder2.ManageUserPage">
     <ContentPage.Content>
         <StackLayout Padding="20" Spacing="15">
+            <Button Text="🏠 Home" Clicked="OnHomeClicked" 
+                    BackgroundColor="Transparent" TextColor="Blue" 
+                    HorizontalOptions="Start" FontAttributes="Bold"/>
+            
             <!-- Add New User Button -->
             <Button Text="Add New User" 
                 BackgroundColor="#009688" 

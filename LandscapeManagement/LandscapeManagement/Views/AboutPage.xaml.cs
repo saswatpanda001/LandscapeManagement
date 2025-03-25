@@ -13,6 +13,7 @@ namespace LandscapeManagement.Views
         public AboutPage()
         {
             InitializeComponent();
+            NavigationPage.SetHasBackButton(this, false);
         }
         private async void OnCustomerLoginClicked(object sender, EventArgs e)
         {

@@ -28,7 +28,14 @@ namespace LandscapeManagement.Views.NewFolder2
         {
             InitializeComponent();
             LoadDashboardData();
+            NavigationPage.SetHasBackButton(this, false);
         }
+
+        private async void OnHomeClicked(object sender, EventArgs e)
+        {
+            await Navigation.PushAsync(new AboutPage());
+        }
+
 
         private async void LoadDashboardData()
         {
@@ -51,7 +58,7 @@ namespace LandscapeManagement.Views.NewFolder2
                 lblTotalUsers.Text = totalUsers.ToString();
                 lblTotalServices.Text = totalServices.ToString();
                 lblTotalBookings.Text = totalBookings.ToString();
-                lstRecentBookings.ItemsSource = lastThreeBookings;
+               
             }
             catch (Exception ex)
             {
@@ -75,7 +82,13 @@ namespace LandscapeManagement.Views.NewFolder2
         {
             await Navigation.PushAsync(new ManageUserPage());
         }
-       
+
+        private async void GoToManageServices(object sender, EventArgs e)
+        {
+            await Navigation.PushAsync(new ManageServicePage());
+        }
+
+
 
 
 

@@ -1068,11 +1068,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Project\\LandscapeManagement\\LandscapeManagement\\LandscapeManagement.iOS\\LandscapeManagement.iOS.csproj",
+      "projectUniqueName": "C:\\Users\\saswa\\source\\repos\\LandscapeManagement\\LandscapeManagement\\LandscapeManagement.iOS\\LandscapeManagement.iOS.csproj",
       "projectName": "LandscapeManagement.iOS",
-      "projectPath": "C:\\Project\\LandscapeManagement\\LandscapeManagement\\LandscapeManagement.iOS\\LandscapeManagement.iOS.csproj",
+      "projectPath": "C:\\Users\\saswa\\source\\repos\\LandscapeManagement\\LandscapeManagement\\LandscapeManagement.iOS\\LandscapeManagement.iOS.csproj",
       "packagesPath": "C:\\Users\\saswa\\.nuget\\packages\\",
-      "outputPath": "C:\\Project\\LandscapeManagement\\LandscapeManagement\\LandscapeManagement.iOS\\obj\\",
+      "outputPath": "C:\\Users\\saswa\\source\\repos\\LandscapeManagement\\LandscapeManagement\\LandscapeManagement.iOS\\obj\\",
       "projectStyle": "PackageReference",
       "skipContentFileWrite": true,
       "fallbackFolders": [
@@ -1093,8 +1093,8 @@
       "frameworks": {
         "xamarinios10": {
           "projectReferences": {
-            "C:\\Project\\LandscapeManagement\\LandscapeManagement\\LandscapeManagement\\LandscapeManagement.csproj": {
-              "projectPath": "C:\\Project\\LandscapeManagement\\LandscapeManagement\\LandscapeManagement\\LandscapeManagement.csproj"
+            "C:\\Users\\saswa\\source\\repos\\LandscapeManagement\\LandscapeManagement\\LandscapeManagement\\LandscapeManagement.csproj": {
+              "projectPath": "C:\\Users\\saswa\\source\\repos\\LandscapeManagement\\LandscapeManagement\\LandscapeManagement\\LandscapeManagement.csproj"
             }
           }
         }

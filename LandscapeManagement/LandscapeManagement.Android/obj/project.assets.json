@@ -2189,11 +2189,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Project\\LandscapeManagement\\LandscapeManagement\\LandscapeManagement.Android\\LandscapeManagement.Android.csproj",
+      "projectUniqueName": "C:\\Users\\saswa\\source\\repos\\LandscapeManagement\\LandscapeManagement\\LandscapeManagement.Android\\LandscapeManagement.Android.csproj",
       "projectName": "LandscapeManagement.Android",
-      "projectPath": "C:\\Project\\LandscapeManagement\\LandscapeManagement\\LandscapeManagement.Android\\LandscapeManagement.Android.csproj",
+      "projectPath": "C:\\Users\\saswa\\source\\repos\\LandscapeManagement\\LandscapeManagement\\LandscapeManagement.Android\\LandscapeManagement.Android.csproj",
       "packagesPath": "C:\\Users\\saswa\\.nuget\\packages\\",
-      "outputPath": "C:\\Project\\LandscapeManagement\\LandscapeManagement\\LandscapeManagement.Android\\obj\\",
+      "outputPath": "C:\\Users\\saswa\\source\\repos\\LandscapeManagement\\LandscapeManagement\\LandscapeManagement.Android\\obj\\",
       "projectStyle": "PackageReference",
       "skipContentFileWrite": true,
       "fallbackFolders": [
@@ -2214,8 +2214,8 @@
       "frameworks": {
         "monoandroid11.0": {
           "projectReferences": {
-            "C:\\Project\\LandscapeManagement\\LandscapeManagement\\LandscapeManagement\\LandscapeManagement.csproj": {
-              "projectPath": "C:\\Project\\LandscapeManagement\\LandscapeManagement\\LandscapeManagement\\LandscapeManagement.csproj"
+            "C:\\Users\\saswa\\source\\repos\\LandscapeManagement\\LandscapeManagement\\LandscapeManagement\\LandscapeManagement.csproj": {
+              "projectPath": "C:\\Users\\saswa\\source\\repos\\LandscapeManagement\\LandscapeManagement\\LandscapeManagement\\LandscapeManagement.csproj"
             }
           }
         }

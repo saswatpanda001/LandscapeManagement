@@ -4,29 +4,43 @@
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     x:Class="LandscapeManagement.Views.NewFolder2.BulkBookingDeletion"
     Title="Bulk Delete Bookings"
-    BackgroundColor="#FFFFFF">
+    BackgroundColor="#F9F9F9">
 
-    <StackLayout Padding="20" Spacing="15">
-        <!-- Page Title -->
+    <StackLayout Padding="20" Spacing="20">
+        <!-- Navigation Button -->
+        <Button Text="🏠 Home" Clicked="OnHomeClicked" 
+                BackgroundColor="Transparent" TextColor="#007BFF" 
+                HorizontalOptions="Start" FontAttributes="Bold"/>
+
+        <!-- Heading -->
         <Label Text="Bulk Delete Bookings" 
-               FontSize="24" 
+               FontSize="28" 
                FontAttributes="Bold" 
-               HorizontalOptions="Center" />
+               HorizontalOptions="Center" 
+               TextColor="#333"/>
 
-        <!-- CollectionView with Multiple Selection -->
+        <!-- Select All and Deselect All Buttons -->
+        <StackLayout Orientation="Horizontal" Spacing="20" HorizontalOptions="Center">
+            <Button Text="Select All" Clicked="OnSelectAllClicked" 
+                    BackgroundColor="#4CAF50" TextColor="White" WidthRequest="150"/>
+            <Button Text="Deselect All" Clicked="OnDeselectAllClicked" 
+                    BackgroundColor="#FFC107" TextColor="White" WidthRequest="150"/>
+        </StackLayout>
+
+        <!-- CollectionView for Displaying Bookings -->
         <CollectionView x:Name="BookingsCollectionView" 
-                        SelectionMode="None">
+                         SelectionMode="None" 
+                         HeightRequest="400">
             <CollectionView.ItemsLayout>
-                <LinearItemsLayout Orientation="Vertical" ItemSpacing="15"/>
+                <LinearItemsLayout Orientation="Vertical" ItemSpacing="10"/>
             </CollectionView.ItemsLayout>
             <CollectionView.ItemTemplate>
                 <DataTemplate>
-                    <Frame BackgroundColor="#F0F0F0" 
-                           CornerRadius="10" 
+                    <Frame BackgroundColor="#FFFFFF" 
+                           CornerRadius="12" 
                            Padding="15" 
                            Margin="5" 
-                           HasShadow="True"
-                           MinimumHeightRequest="120">
+                           HasShadow="True">
                         <StackLayout Orientation="Horizontal" Spacing="10">
                             <CheckBox IsChecked="{Binding IsSelected, Mode=TwoWay}" VerticalOptions="Center"/>
                             <StackLayout Spacing="5" HorizontalOptions="FillAndExpand">
@@ -50,7 +64,7 @@
             </CollectionView.ItemTemplate>
         </CollectionView>
 
-        <!-- Delete Selected Button -->
+        <!-- Delete Button -->
         <Button Text="Delete Selected Bookings" 
                 BackgroundColor="#F44336" 
                 TextColor="White" 

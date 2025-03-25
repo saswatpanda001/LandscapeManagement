@@ -1,0 +1,63 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="LandscapeManagement.Views.NewFolder2.ManageServicePage">
+    <ContentPage.Content>
+        <StackLayout Padding="20" Spacing="15">
+            <Button Text="🏠 Home" Clicked="OnHomeClicked" 
+                    BackgroundColor="Transparent" TextColor="Blue" 
+                    HorizontalOptions="Start" FontAttributes="Bold"/>
+
+            <!-- Heading -->
+            <Label Text="Manage Services" FontSize="24" TextColor="#333" HorizontalOptions="Center" />
+
+            <!-- Add New Service Button -->
+            <Button Text="Add New Service"
+                    Clicked="OnAddServiceClicked"
+                    BackgroundColor="#007BFF"
+                    TextColor="White"
+                    CornerRadius="10" />
+
+            <!-- Services List -->
+            <ListView x:Name="ServiceListView"
+                      ItemsSource="{Binding Services}"
+                      HasUnevenRows="True">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <Frame BackgroundColor="#FFF"
+                                   CornerRadius="10"
+                                   Padding="10"
+                                   Margin="5">
+                                <StackLayout>
+                                    <Label Text="{Binding service_name}"
+                                           FontSize="18"
+                                           TextColor="#000" />
+                                    <Label Text="{Binding description}"
+                                           FontSize="14"
+                                           TextColor="#666" />
+                                    <StackLayout Orientation="Horizontal"
+                                                 Spacing="10">
+                                        <Button Text="Edit"
+                                                Clicked="OnEditServiceClicked"
+                                                BackgroundColor="#28A745"
+                                                TextColor="White"
+                                                CornerRadius="10"
+                                                CommandParameter="{Binding}" />
+                                        <Button Text="Delete"
+                                                Clicked="OnDeleteClicked"
+                                                BackgroundColor="#DC3545"
+                                                TextColor="White"
+                                                CornerRadius="10"
+                                                CommandParameter="{Binding}" />
+                                    </StackLayout>
+                                </StackLayout>
+                            </Frame>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

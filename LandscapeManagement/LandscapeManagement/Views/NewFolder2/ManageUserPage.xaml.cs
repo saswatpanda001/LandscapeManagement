@@ -16,6 +16,7 @@ namespace LandscapeManagement.Views.NewFolder2
         public ManageUserPage()
         {
             InitializeComponent();
+            NavigationPage.SetHasBackButton(this, false);
         }
 
         protected override async void OnAppearing()
@@ -76,5 +77,11 @@ namespace LandscapeManagement.Views.NewFolder2
                 }
             }
         }
+
+        private async void OnHomeClicked(object sender, EventArgs e)
+        {
+            await Navigation.PushAsync(new AdminDashboard());
+        }
+
     }
 }

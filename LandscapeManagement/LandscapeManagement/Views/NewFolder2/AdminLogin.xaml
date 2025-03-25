@@ -4,6 +4,9 @@
              x:Class="LandscapeManagement.Views.NewFolder2.AdminLogin">
     <ContentPage.Content>
         <StackLayout Padding="30" Spacing="20" VerticalOptions="Center">
+            <Button Text="🏠 Home" Clicked="OnHomeClicked" 
+                    BackgroundColor="Transparent" TextColor="Blue" 
+                    HorizontalOptions="Start" FontAttributes="Bold"/>
 
             <!-- Login Heading -->
             <Label Text="Admin Login" FontSize="28" FontAttributes="Bold" TextColor="#2980B9" HorizontalOptions="Center"/>

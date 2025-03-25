@@ -4,6 +4,9 @@
              x:Class="LandscapeManagement.Views.NewFolder1.UserDashboard">
     <ContentPage.Content>
         <StackLayout Padding="20" Spacing="15">
+            <Button Text="🏠 Logout" Clicked="OnHomeClicked" 
+                    BackgroundColor="Transparent" TextColor="Blue" 
+                    HorizontalOptions="Start" FontAttributes="Bold"/>
 
             <!-- Welcome Section -->
             <Frame BackgroundColor="#2980B9" CornerRadius="15" Padding="20">

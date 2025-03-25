@@ -5,8 +5,11 @@
     <ContentPage.Content>
         <ScrollView>
             <StackLayout Padding="20" Spacing="20" VerticalOptions="CenterAndExpand">
+                <Button Text="🏠 Home" Clicked="OnHomeClicked" 
+                    BackgroundColor="Transparent" TextColor="Blue" 
+                    HorizontalOptions="Start" FontAttributes="Bold"/>
 
-            
+
                 <!-- User Info -->
                 <Label x:Name="UserNameLabel" FontSize="26" FontAttributes="Bold"
                    TextColor="#2980B9" HorizontalOptions="Center"/>

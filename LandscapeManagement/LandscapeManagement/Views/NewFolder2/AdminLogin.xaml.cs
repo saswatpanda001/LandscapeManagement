@@ -18,7 +18,14 @@ namespace LandscapeManagement.Views.NewFolder2
         public AdminLogin()
         {
             InitializeComponent();
+            NavigationPage.SetHasBackButton(this, false);
         }
+
+        private async void OnHomeClicked(object sender, EventArgs e)
+        {
+            await Navigation.PushAsync(new AboutPage());
+        }
+
         private void TogglePasswordVisibility(object sender, EventArgs e)
         {
             PasswordEntry.IsPassword = !PasswordEntry.IsPassword;
@@ -30,7 +37,7 @@ namespace LandscapeManagement.Views.NewFolder2
             await Navigation.PushAsync(new PasswordReset());
         }
 
-        
+
 
 
 
@@ -39,25 +46,69 @@ namespace LandscapeManagement.Views.NewFolder2
             string email = EmailEntry.Text?.Trim();
             string password = PasswordEntry.Text?.Trim();
 
+            // Validate email and password fields
             if (string.IsNullOrEmpty(email) || string.IsNullOrEmpty(password))
             {
-                await DisplayAlert("Error", "Please enter email and password", "OK");
+                await DisplayAlert("Error", "Please enter both email and password.", "OK");
                 return;
             }
 
-            // ✅ Use AdminLoginAsync instead of LoginAsync
-            LandscapeManagement.Models.User loggedInAdmin = await _userService.AdminLoginAsync(email, password);
-
-            if (loggedInAdmin != null)
+            // Email format validation
+            if (!IsValidEmail(email))
             {
-                SessionManager.SetUser(loggedInAdmin);
-                await DisplayAlert("Success", "Admin Login Successful", "OK");
-                await Navigation.PushAsync(new AdminDashboard()); // Redirect to Admin Dashboard
+                await DisplayAlert("Error", "Please enter a valid email address.", "OK");
+                return;
             }
-            else
+
+            // Password length validation
+            if (password.Length < 6)
             {
-                await DisplayAlert("Error", "Invalid email or password", "OK");
+                await DisplayAlert("Error", "Password must be at least 6 characters long.", "OK");
+                return;
+            }
+
+            try
+            {
+                // Call the AdminLoginAsync service
+                LandscapeManagement.Models.User loggedInAdmin = await _userService.AdminLoginAsync(email, password);
+
+                if (loggedInAdmin != null)
+                {
+                    // Optional: Check if user has admin privileges
+                    if (loggedInAdmin.role != "Admin")
+                    {
+                        await DisplayAlert("Error", "Access Denied. You are not authorized as an Admin.", "OK");
+                        return;
+                    }
+
+                    SessionManager.SetUser(loggedInAdmin);
+                    await DisplayAlert("Success", "Admin Login Successful", "OK");
+                    await Navigation.PushAsync(new AdminDashboard());
+                }
+                else
+                {
+                    await DisplayAlert("Error", "Invalid email or password.", "OK");
+                }
+            }
+            catch (Exception ex)
+            {
+                await DisplayAlert("Error", $"An error occurred: {ex.Message}", "OK");
             }
         }
+
+        // Email validation function using regex
+        private bool IsValidEmail(string email)
+        {
+            try
+            {
+                var addr = new System.Net.Mail.MailAddress(email);
+                return addr.Address == email;
+            }
+            catch
+            {
+                return false;
+            }
+        }
+
     }
 }

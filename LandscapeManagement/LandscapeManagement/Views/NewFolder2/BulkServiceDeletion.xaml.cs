@@ -1,9 +1,8 @@
-﻿using System;
+﻿
+using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
 using System.Threading.Tasks;
-using LandscapeManagement.Views.NewFolder2;
 using LandscapeManagement.Models;
 using LandscapeManagement.Services;
 using System.Collections.ObjectModel;
@@ -24,6 +23,12 @@ namespace LandscapeManagement.Views.NewFolder2
             _service = new SerService();
             Services = new ObservableCollection<Service>();
             BindingContext = this;
+            NavigationPage.SetHasBackButton(this, false);
+        }
+
+        private async void OnHomeClicked(object sender, EventArgs e)
+        {
+            await Navigation.PushAsync(new AdminDashboard());
         }
 
         protected override async void OnAppearing()
@@ -38,11 +43,24 @@ namespace LandscapeManagement.Views.NewFolder2
             Services.Clear();
             foreach (var service in services)
             {
-                service.IsSelected = false; // Track selection via checkbox
+                service.IsSelected = false;
                 Services.Add(service);
             }
         }
 
+        private void OnSelectAllClicked(object sender, EventArgs e)
+        {
+            bool allSelected = Services.All(s => s.IsSelected);
+
+            foreach (var service in Services)
+            {
+                service.IsSelected = !allSelected;
+            }
+
+            // Refresh CollectionView
+            ServicesCollectionView.ItemsSource = null;
+            ServicesCollectionView.ItemsSource = Services;
+        }
         private async void OnDeleteSelected(object sender, EventArgs e)
         {
             var selectedServices = Services.Where(s => s.IsSelected).ToList();
@@ -56,7 +74,7 @@ namespace LandscapeManagement.Views.NewFolder2
             bool confirm = await DisplayAlert("Confirm", $"Delete {selectedServices.Count} services?", "Yes", "No");
             if (!confirm) return;
 
-            foreach (var service in selectedServices.ToList())  // ToList() prevents modification issues
+            foreach (var service in selectedServices.ToList())
             {
                 bool deleted = await _service.DeleteServiceAsync(service.service_id);
                 if (deleted)
@@ -67,6 +85,5 @@ namespace LandscapeManagement.Views.NewFolder2
 
             await DisplayAlert("Success", "Selected services deleted.", "OK");
         }
-
     }
 }

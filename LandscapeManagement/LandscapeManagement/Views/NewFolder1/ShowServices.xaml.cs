@@ -17,7 +17,14 @@ namespace LandscapeManagement.Views.NewFolder1
             InitializeComponent();
             _service = new SerService();
             LoadServices();
+            NavigationPage.SetHasBackButton(this, false);
         }
+
+        private async void OnHomeClicked(object sender, EventArgs e)
+        {
+            await Navigation.PushAsync(new UserDashboard());
+        }
+
 
         private async void LoadServices()
         {

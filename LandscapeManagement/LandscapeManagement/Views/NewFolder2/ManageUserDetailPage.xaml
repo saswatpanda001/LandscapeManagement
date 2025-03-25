@@ -4,6 +4,10 @@
              x:Class="LandscapeManagement.Views.NewFolder2.ManageUserDetailPage">
     <ContentPage.Content>
         <StackLayout Padding="20" Spacing="15">
+            <Button Text="🏠 Home" Clicked="OnHomeClicked" 
+                    BackgroundColor="Transparent" TextColor="Blue" 
+                    HorizontalOptions="Start" FontAttributes="Bold"/>
+            
             <Label Text="User Details" FontSize="24" FontAttributes="Bold" HorizontalOptions="Center"/>
             <Entry x:Name="NameEntry" Placeholder="Name" TextColor="Black" BackgroundColor="#f0f0f0"/>
             <Entry x:Name="EmailEntry" Placeholder="Email" Keyboard="Email" TextColor="Black" BackgroundColor="#f0f0f0"/>

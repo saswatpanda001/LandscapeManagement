@@ -5,6 +5,9 @@
 
     <ContentPage.Content>
         <StackLayout Padding="20" Spacing="20" BackgroundColor="#F5F5F5">
+            <Button Text="🏠 Home" Clicked="OnHomeClicked" 
+                    BackgroundColor="Transparent" TextColor="Blue" 
+                    HorizontalOptions="Start" FontAttributes="Bold"/>
 
             <!-- Selected Service Display -->
             <Frame BackgroundColor="#3498DB" CornerRadius="15" Padding="20" HasShadow="True">

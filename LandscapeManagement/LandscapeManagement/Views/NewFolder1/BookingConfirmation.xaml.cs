@@ -15,7 +15,13 @@ namespace LandscapeManagement.Views.NewFolder1
         public BookingConfirmation()
         {
             InitializeComponent();
+            NavigationPage.SetHasBackButton(this, false);
         }
+        private async void OnHomeClicked(object sender, EventArgs e)
+        {
+            await Navigation.PushAsync(new UserDashboard());
+        }
+
 
         private void GoToDashboard(object sender, EventArgs e)
         {

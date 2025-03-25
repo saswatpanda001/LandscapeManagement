@@ -6,6 +6,9 @@
 
     <ContentPage.Content>
         <StackLayout Padding="20">
+            <Button Text="🏠 Home" Clicked="OnHomeClicked" 
+                    BackgroundColor="Transparent" TextColor="Blue" 
+                    HorizontalOptions="Start" FontAttributes="Bold"/>
 
             <Label Text="Available Services"
                    FontSize="26"

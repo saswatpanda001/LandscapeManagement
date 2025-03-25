@@ -15,7 +15,14 @@ namespace LandscapeManagement.Views.NewFolder1
         public Logout()
         {
             InitializeComponent();
+            NavigationPage.SetHasBackButton(this, false);
         }
+
+        private async void OnHomeClicked(object sender, EventArgs e)
+        {
+            await Navigation.PushAsync(new UserDashboard());
+        }
+
         private void OnCancelClicked(object sender, EventArgs e)
         {
             Navigation.PopAsync(); // Go back to the previous page

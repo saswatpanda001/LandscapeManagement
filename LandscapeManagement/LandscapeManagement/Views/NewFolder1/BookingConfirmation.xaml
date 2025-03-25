@@ -4,6 +4,10 @@
              x:Class="LandscapeManagement.Views.NewFolder1.BookingConfirmation">
     <ContentPage.Content>
         <StackLayout Padding="30" Spacing="20" VerticalOptions="Center" HorizontalOptions="Center">
+            <Button Text="🏠 Home" Clicked="OnHomeClicked" 
+                    BackgroundColor="Transparent" TextColor="Blue" 
+                    HorizontalOptions="Start" FontAttributes="Bold"/>
+            
 
             <Image Source="success_icon.png" HeightRequest="100" WidthRequest="100" HorizontalOptions="Center"/>
 

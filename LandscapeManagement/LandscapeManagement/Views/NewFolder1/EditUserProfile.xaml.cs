@@ -16,6 +16,13 @@ namespace LandscapeManagement.Views.NewFolder1
         private User _user;
         private readonly UserService _userService = new UserService();
 
+        private async void OnHomeClicked(object sender, EventArgs e)
+        {
+            await Navigation.PushAsync(new UserDashboard());
+
+        }
+
+
         public EditUserProfile(User user)
         {
             InitializeComponent();
@@ -26,6 +33,8 @@ namespace LandscapeManagement.Views.NewFolder1
             emailEntry.Text = _user.email;
             phoneEntry.Text = _user.phone;
             addressEditor.Text = _user.address;
+            NavigationPage.SetHasBackButton(this, false);
+
 
         }
 
@@ -34,12 +43,27 @@ namespace LandscapeManagement.Views.NewFolder1
             try
             {
                 // Validate user input
-                if (string.IsNullOrWhiteSpace(nameEntry.Text) ||
-                    string.IsNullOrWhiteSpace(emailEntry.Text) ||
-                    string.IsNullOrWhiteSpace(phoneEntry.Text) ||
-                    string.IsNullOrWhiteSpace(addressEditor.Text))
+                if (string.IsNullOrWhiteSpace(nameEntry.Text) || nameEntry.Text.Length < 3)
                 {
-                    await DisplayAlert("Validation Error", "All fields are required!", "OK");
+                    await DisplayAlert("Validation Error", "Name must be at least 3 characters long.", "OK");
+                    return;
+                }
+
+                if (string.IsNullOrWhiteSpace(emailEntry.Text) || !IsValidEmail(emailEntry.Text))
+                {
+                    await DisplayAlert("Validation Error", "Please enter a valid email address.", "OK");
+                    return;
+                }
+
+                if (string.IsNullOrWhiteSpace(phoneEntry.Text) || phoneEntry.Text.Length != 10 || !phoneEntry.Text.All(char.IsDigit))
+                {
+                    await DisplayAlert("Validation Error", "Phone number must be exactly 10 digits and contain only numbers.", "OK");
+                    return;
+                }
+
+                if (string.IsNullOrWhiteSpace(addressEditor.Text) || addressEditor.Text.Length < 10)
+                {
+                    await DisplayAlert("Validation Error", "Address must be at least 10 characters long.", "OK");
                     return;
                 }
 
@@ -67,6 +91,21 @@ namespace LandscapeManagement.Views.NewFolder1
                 await DisplayAlert("Error", $"Something went wrong: {ex.Message}", "OK");
             }
         }
+
+        // Email validation function using regular expression
+        private bool IsValidEmail(string email)
+        {
+            try
+            {
+                var addr = new System.Net.Mail.MailAddress(email);
+                return addr.Address == email;
+            }
+            catch
+            {
+                return false;
+            }
+        }
+
 
 
     }

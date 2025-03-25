@@ -12,6 +12,12 @@ namespace LandscapeManagement.Views.NewFolder1
         public UserDashboard()
         {
             InitializeComponent();
+            NavigationPage.SetHasBackButton(this, false);
+        }
+
+        private async void OnHomeClicked(object sender, EventArgs e)
+        {
+            await Navigation.PushAsync(new AboutPage());
         }
 
         protected override void OnAppearing()

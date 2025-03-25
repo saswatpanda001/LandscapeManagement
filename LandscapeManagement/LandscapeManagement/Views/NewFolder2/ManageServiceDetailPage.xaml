@@ -1,0 +1,37 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="LandscapeManagement.Views.NewFolder2.ManageServiceDetailPage"
+             BackgroundColor="#F0F8FF">
+    <ContentPage.Content>
+        <ScrollView>
+            <StackLayout Padding="20" Spacing="15">
+                <Button Text="🏠 Home" Clicked="OnHomeClicked" 
+                    BackgroundColor="Transparent" TextColor="Blue" 
+                    HorizontalOptions="Start" FontAttributes="Bold"/>
+
+                <!-- Heading -->
+                <Label Text="Manage Service" FontSize="24" TextColor="#333" HorizontalOptions="Center" />
+
+                <!-- Service Name -->
+                <Label Text="Service Name" FontSize="18" TextColor="#555" />
+                <Entry x:Name="ServiceNameEntry" Text="{Binding service_name}" Placeholder="Enter service name" BackgroundColor="#FFF" />
+
+                <!-- Description -->
+                <Label Text="Description" FontSize="18" TextColor="#555" />
+                <Editor x:Name="DescriptionEditor" Text="{Binding description}" HeightRequest="100" BackgroundColor="#FFF" />
+
+                <!-- Price -->
+                <Label Text="Price" FontSize="18" TextColor="#555" />
+                <Entry x:Name="PriceEntry" Text="{Binding price}" Keyboard="Numeric" Placeholder="Enter price" BackgroundColor="#FFF" />
+
+                <!-- Duration -->
+                <Label Text="Duration (mins)" FontSize="18" TextColor="#555" />
+                <Entry x:Name="DurationEntry" Text="{Binding duration}" Keyboard="Numeric" Placeholder="Enter duration" BackgroundColor="#FFF" />
+
+                <!-- Save Button -->
+                <Button Text="Save" Clicked="OnSaveClicked" BackgroundColor="#007BFF" TextColor="White" CornerRadius="10" />
+            </StackLayout>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>

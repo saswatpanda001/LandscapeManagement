@@ -18,6 +18,7 @@ namespace LandscapeManagement.Views.NewFolder1
             InitializeComponent();
             _userService = new UserService();
             LoadUserProfile();
+            NavigationPage.SetHasBackButton(this, false);
         }
 
         private async void LoadUserProfile()
@@ -64,5 +65,11 @@ namespace LandscapeManagement.Views.NewFolder1
         {
             await Navigation.PushAsync(new Logout());
         }
+
+        private async void OnHomeClicked(object sender, EventArgs e)
+        {
+            await Navigation.PushAsync(new UserDashboard());
+        }
+
     }
 }

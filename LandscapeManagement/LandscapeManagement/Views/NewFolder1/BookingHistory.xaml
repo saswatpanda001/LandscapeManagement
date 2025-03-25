@@ -6,6 +6,9 @@
 
     <ContentPage.Content>
         <StackLayout Padding="20" Spacing="20">
+            <Button Text="🏠 Home" Clicked="OnHomeClicked" 
+                    BackgroundColor="Transparent" TextColor="Blue" 
+                    HorizontalOptions="Start" FontAttributes="Bold"/>
 
             <Label Text="Booking History"
                    FontSize="26"
@@ -29,28 +32,32 @@
 
                                 <StackLayout Spacing="8">
                                     <Label Text="{Binding Service.service_name}" 
-                                           FontSize="20" 
+                                       FontSize="20" 
+                                       FontAttributes="Bold"
+                                       TextColor="#2980B9"/>
+
+                                                                <Label Text="{Binding booking_date, StringFormat='{0:MMMM d, yyyy}'}" 
+                                       FontSize="16" 
+                                       TextColor="#7F8C8D"/>
+
+                                                                <Frame Padding="5"
+                                       CornerRadius="5"
+                                       BackgroundColor="Purple"
+                                       HorizontalOptions="Start">
+                                                                    <Label Text="{Binding status}" 
+                                           FontSize="14"
                                            FontAttributes="Bold"
-                                           TextColor="#2980B9"/>
+                                           TextColor="White"/>
+                                                                </Frame>
 
-                                
-
-                                
-                                    <Label Text="{Binding booking_date, StringFormat='{0:MMMM d, yyyy}'}" 
-                                           FontSize="16" 
-                                           TextColor="#7F8C8D"/>
-
-                                    <Frame Padding="5"
-                                           CornerRadius="5"
-                                           BackgroundColor="Purple"
-                                           HorizontalOptions="Start">
-                                        <Label Text="{Binding status}" 
-                                               FontSize="14"
-                                               FontAttributes="Bold"
-                                               TextColor="White"/>
-                                    </Frame>
-
+                                                                <Button Text="🗑 Delete" 
+                                        BackgroundColor="Red" 
+                                        TextColor="White"
+                                        CornerRadius="5"
+                                        FontAttributes="Bold"
+                                        Clicked="OnDeleteBookingClicked"/>
                                 </StackLayout>
+
 
                             </Frame>
                         </ViewCell>

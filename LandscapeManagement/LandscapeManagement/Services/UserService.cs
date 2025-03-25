@@ -184,26 +184,5 @@ namespace LandscapeManagement.Services
         }
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
     }
 }

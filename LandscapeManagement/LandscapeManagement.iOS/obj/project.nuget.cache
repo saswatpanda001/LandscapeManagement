@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "4DVBO+PeUIhyUsNK88NAjLr4TNZVFQxqeQQC1331nKQbKC3XU0cZbjzDy1MpPtNRahPnzV7srLGY9v3KuPXO1Q==",
+  "dgSpecHash": "P/jRN03XsFD6DVNjibhTK1aHpfNifUX/L9HwrrLHC7Pit2rdE6y1FM+/HrRDVSuE42iajdmHcLq90IHCMowJoQ==",
   "success": true,
-  "projectFilePath": "C:\\Project\\LandscapeManagement\\LandscapeManagement\\LandscapeManagement.iOS\\LandscapeManagement.iOS.csproj",
+  "projectFilePath": "C:\\Users\\saswa\\source\\repos\\LandscapeManagement\\LandscapeManagement\\LandscapeManagement.iOS\\LandscapeManagement.iOS.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\saswa\\.nuget\\packages\\newtonsoft.json\\13.0.3\\newtonsoft.json.13.0.3.nupkg.sha512",
     "C:\\Users\\saswa\\.nuget\\packages\\system.numerics.vectors\\4.5.0\\system.numerics.vectors.4.5.0.nupkg.sha512",

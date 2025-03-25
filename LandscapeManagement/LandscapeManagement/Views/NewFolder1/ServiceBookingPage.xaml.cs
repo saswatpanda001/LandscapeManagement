@@ -19,6 +19,12 @@ namespace LandscapeManagement.Views.NewFolder1
             // Set UI elements
             SelectedServiceLabel.Text = $"Selected Service: {_selectedService.service_name}"; // ✅ Use correct property name
             ServiceDatePicker.MinimumDate = DateTime.Today;  // ✅ Set minimum date here
+            NavigationPage.SetHasBackButton(this, false);
+        }
+        private async void OnHomeClicked(object sender, EventArgs e)
+        {
+            await Navigation.PushAsync(new UserDashboard());
+
         }
 
         private async void OnBookNowClicked(object sender, EventArgs e)
@@ -32,11 +38,30 @@ namespace LandscapeManagement.Views.NewFolder1
                     return;
                 }
 
+                if (_selectedService == null)
+                {
+                    await DisplayAlert("Error", "Please select a service before booking.", "OK");
+                    return;
+                }
+
+                DateTime selectedDateTime = ServiceDatePicker.Date.Add(ServiceTimePicker.Time);
+                if (selectedDateTime < DateTime.Now)
+                {
+                    await DisplayAlert("Error", "You cannot select a past date or time.", "OK");
+                    return;
+                }
+
+                bool confirmBooking = await DisplayAlert("Confirm Booking", $"Confirm your booking for {_selectedService.service_name} on {selectedDateTime}?", "Yes", "No");
+                if (!confirmBooking)
+                {
+                    return;
+                }
+
                 var booking = new Booking
                 {
                     user_id = userId,
-                    service_id = _selectedService.service_id, // ✅ Use correct property name
-                    booking_date = ServiceDatePicker.Date.Add(ServiceTimePicker.Time),
+                    service_id = _selectedService.service_id,
+                    booking_date = selectedDateTime,
                     status = "Pending",
                     created_at = DateTime.Now
                 };
@@ -57,5 +82,6 @@ namespace LandscapeManagement.Views.NewFolder1
                 await DisplayAlert("Error", $"An error occurred: {ex.Message}", "OK");
             }
         }
+
     }
 }

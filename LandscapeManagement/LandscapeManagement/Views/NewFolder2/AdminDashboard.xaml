@@ -5,6 +5,9 @@
     <ContentPage.Content>
         <ScrollView>
             <StackLayout Padding="20" Spacing="15">
+                <Button Text="🏠 Logout" Clicked="OnHomeClicked" 
+                    BackgroundColor="Transparent" TextColor="Blue" 
+                    HorizontalOptions="Start" FontAttributes="Bold"/>
 
                 <!-- Dashboard Heading -->
                 <Label Text="Admin Dashboard" FontSize="26" FontAttributes="Bold" TextColor="#2980B9" HorizontalOptions="Center"/>
@@ -50,58 +53,12 @@
                 <!-- Recent Bookings List -->
                 <Label Text="Recent Bookings" FontSize="20" FontAttributes="Bold" TextColor="#2C3E50" Padding="5"/>
 
-                <CollectionView x:Name="lstRecentBookings" 
-                SelectionMode="None"
-                ItemsSource="{Binding RecentBookings}" 
-                Margin="10">
-                    <CollectionView.ItemsLayout>
-                        <LinearItemsLayout Orientation="Vertical" ItemSpacing="15"/>
-                    </CollectionView.ItemsLayout>
-                    <CollectionView.ItemTemplate>
-                        <DataTemplate>
-                            <Frame BackgroundColor="Black" 
-                   CornerRadius="10" 
-                   Padding="15" 
-                   Margin="5" 
-                   HasShadow="True"
-                   MinimumHeightRequest="150">
-                                <StackLayout Spacing="10">
-                                    <!-- Service Name -->
-                                    <Label Text="{Binding Service.service_name}" 
-                           FontSize="18" 
-                           FontAttributes="Bold" 
-                           TextColor="White"/>
-
-                                    <!-- User Name -->
-                                    <Label Text="{Binding User.name}" 
-                           FontSize="16" 
-                           TextColor="White"/>
-
-                                    <!-- Booking Date -->
-                                    <Label Text="{Binding booking_date, StringFormat='Booked on: {0:MMM dd, yyyy}'}" 
-                           FontSize="14" 
-                           TextColor="White"/>
-
-                                    <!-- Status -->
-                                    <Label Text="{Binding status}" 
-                           FontSize="14" 
-                           TextColor="White"/>
-    
-                                </StackLayout>
-                            </Frame>
-                        </DataTemplate>
-                    </CollectionView.ItemTemplate>
-                </CollectionView>
-
-
-
-
-
-
+               
 
                 <!-- Admin Actions -->
                 <Button Text="Manage Users" BackgroundColor="#9B59B6" TextColor="White" FontSize="18" CornerRadius="10" Clicked="GoToManageUser"/>
-              
+                <Button Text="Manage Services" BackgroundColor="#9B59B6" TextColor="White" FontSize="18" CornerRadius="10" Clicked="GoToManageServices"/>
+
                 <Button Text="BulkBookingDeletion" BackgroundColor="#E74C3C" TextColor="White" FontSize="18" CornerRadius="10" Clicked="OnClikedBulkBookingDeletion" />
                 <Button Text="BulkServiceDeletion" BackgroundColor="#E74C3C" TextColor="White" FontSize="18" CornerRadius="10" Clicked="OnClikedBulkServiceDeletion" />
                 <Button Text="Download Report" BackgroundColor="#E74C3C" TextColor="White" FontSize="18" CornerRadius="10" Clicked="OnGenerateReportClicked"/>

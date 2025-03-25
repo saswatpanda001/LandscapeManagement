@@ -14,6 +14,7 @@ namespace LandscapeManagement.Views.NewFolder1
         {
             InitializeComponent();
             _userService = new UserService();
+            NavigationPage.SetHasBackButton(this, false);
         }
 
         private async void OnResetPasswordClicked(object sender, EventArgs e)
@@ -65,6 +66,12 @@ namespace LandscapeManagement.Views.NewFolder1
                 errorLabel.IsVisible = true;
             }
         }
+
+        private async void OnHomeClicked(object sender, EventArgs e)
+        {
+            await Navigation.PushAsync(new AboutPage());
+        }
+
 
         private async void OnBackToLoginClicked(object sender, EventArgs e)
         {
